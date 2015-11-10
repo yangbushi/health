@@ -10,28 +10,55 @@
 <base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
-</head>
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="js/verifyNotNull.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//	alert("ready");
+	$(".noUsername")(function() {
+		alert("ready");
+		return false;
+		//var name = $(this).attr("name");
+	    if($(this).val()=="") {
+	    	var divshow = $("#showInfo");
+            divshow.text("");
+            //divshow.append("需要输入"+$(this).attr('notNull'));
+	    	//alert($(this).attr('notNull')+"不能为空");
+	    	return false;
+	    }
+	})
+	
+// 	$("#login").validate({
+// 		rules:{
+// 			username:"required",
+	
+// 		}
+// 	});
+})
+</script>
+</head>
+
 <body>
-	<form action="send.html" method="post">
+	<form id="login" action="send.html" method="post" >
 		<div id="box">
 			<ul>
-				<li class="center">SpringMVC4.0 + MyBatis3.2 + 验证码  + 邮箱   + Log4j</li>
+				<li class="center">卫生云信息平台</li>
+			</ul>
+			<text id="showInfo"></text>
+			<ul>
+				<li class="left">账&nbsp;号：<input id="username" type="text" name="username" value="${username}" class="noUsername" notNull="账号"/></li>
 			</ul>
 			<ul>
-				<li class="center">账号：<input type="text" name="username" value="${username}"/></li>
+				<li class="left">密&nbsp;码：<input type="password" name="password" value="${password}" class="noPassword" notNull="密码"/></li>
 			</ul>
 			<ul>
-				<li class="center">密码：<input type="password" name="password" value="${password}"/></li>
-			</ul>
-			<ul>
-				<li class="left">输入验证码吧：<input type="text" name="code" /><img id="imgObj" onclick="javascript:changeImg()" src="code.html" /></li>
+				<li class="left">验证码：<input type="text" name="code" /><img id="imgObj" onclick="javascript:changeImg()" src="code.html" /></li>
 			</ul>
 			<ul>
 				<li class="left">后台返回数据：<input type="text" value="${info}" readonly="readonly"/></li>
 			</ul>
-			<input type="submit" id="send" value="发送邮件" />
+			<input type="submit" id="send" value="登录"/>
 		</div>
 	</form>
     
