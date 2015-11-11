@@ -69,15 +69,15 @@ public class AccessController{
 	    Map<String, Object> model=new HashMap<String, Object>();
 	    if(doctorService.getFromNamePwd(user)!=null){
 //	      usersvo=usersService.selectUsers(usersvo);
-	      System.out.println("能查到信息");
-	      modelAndView.addObject("info", user.getUsername()+user.getPassword());
+//	      System.out.println("能查到信息");
+//	      modelAndView.addObject("info", user.getUsername()+user.getPassword());
 //	      model.put("user", user);
 //	      return new ModelAndView("welcome",model);
 	    }else{
-	      System.out.println("查不到信息");
-	      modelAndView.addObject("info", "用户名或密码错误");
-//	      model.put("error", "用户名或密码错误");
-//	      return new ModelAndView("welcome",model);
+//	      System.out.println("查不到信息");
+//	      modelAndView.addObject("info", "账号与密码不匹配");
+	      model.put("error", "账号与密码不匹配");
+	      return new ModelAndView("welcome",model);
 	    }
 	    
 		return modelAndView;

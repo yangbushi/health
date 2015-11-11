@@ -35,6 +35,13 @@ backcolor: blue;
 */
 	margin: 10% auto;
 }
+#showInfo {
+/*	text-align: center;
+	font-size: 16px;
+	font-weight: bold;*/
+	color: red;
+	margin-left: 155px;
+}
 
 #box ul {
 	width: 100%;
@@ -45,6 +52,14 @@ backcolor: blue;
 	/*background: #1E90FF;
 	border-bottom: 1px solid #fff;*/
 	/*padding: 20px;*/
+}
+
+#box text {
+/*	text-align: center;
+	font-size: 16px;
+	font-weight: bold;*/
+	color: red;
+	margin-left: 155px;
 }
 
 #box ul li {
@@ -60,8 +75,9 @@ backcolor: blue;
 
 .left {
 	/*text-align: center;*/
-	text-align: right;
-	margin-right: 140px;
+	text-align: left;
+/*	margin-right: 140px;*/
+	margin-left: 110px;
 	background-position:50% 50%;
 }
 
@@ -70,12 +86,36 @@ backcolor: blue;
 	/*line-height: 40px;*/
 }
 
+#verify {
+	right:130px;
+	text-align: left;
+/*	margin-left: 140px;*/
+	width: 97px;
+}
+
 .left img {
-	position:absolute;
-	top:10px;
+/*	position:absolute;
+	position:relative;
+	top:20px;
+	margin-top: 20px;
+	horizontal-align:middle;*/
+	vertical-align:middle;
+	
 	right:30px;
-	width: 100px;
+	width: 97px;
 	height: 20px;
+}
+
+.left a {
+	
+/*	position:absolute;
+	text-align: center;*/
+	vertical-align:middle;
+	top:10px;
+	right:100px;
+	width: 50px;
+	height: 20px;
+	
 }
 
 #send {
