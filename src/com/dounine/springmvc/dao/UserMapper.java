@@ -11,4 +11,6 @@ public interface UserMapper {
 	public User get(Integer id);
 	
 	public User getFromNamePwd(User user);
+	
+	public User getRole(User user);
 }

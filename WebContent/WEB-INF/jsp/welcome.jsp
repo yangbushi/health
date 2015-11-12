@@ -14,6 +14,20 @@
 <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
 <script type="text/javascript" src="js/verifyNotNull.js"></script>
 <script type="text/javascript">
+window.onload = function(){
+// 	 var ui =document.getElementById("${failNo}");
+// 	 alert("${failNo}");
+// 	 alert(${failNo});
+ 	 if("${failNo}" >= 3) {
+		 var yanzheng =document.getElementById("yanzheng");
+//		 yanzheng.style.display="none";
+		 yanzheng.style.display="block";
+ 	 }
+// 	alert("${myuser}");
+//  	 if("${user}" != null) {
+//  		 ;
+//  	 }
+}
 // $(document).ready(function(){
 // //	alert("ready");
 // 	var ret;
@@ -48,27 +62,45 @@
 //alert(code);
 </script>
 <script>
+
  function myVeryfy1() {
-	 <% 
+	 <%-- 
 	 String code = session.getAttribute("code").toString();
-	 //out.print("myVeryfy1"); 
+	 out.print("myVeryfy1"); 
 	 
-	 %>
-	 
+	 --%>
+		<%-- String code1 = session.getAttribute("myuser").toString(); --%>
+		<%-- out.print(code1); --%>
  }
 
+
 </script>
+
+<%
+if(session.getAttribute("myuser") != null) {
+	String myString = session.getAttribute("myuser").toString();
+//	out.print(myString);
+%>
+	<script type="text/javascript">
+//	alert("already logged in");
+	location.href = 'doctor.html';
+	</script>
+<%
+}
+%>
+
 </head>
 
 <body>
-	<form id="login" action="send.html" method="post" onsubmit="return myVerify1()">
+	<form id="login" action="send.html" method="post" onsubmit="return myVerify()">
 		<div id="box">
 			<ul>
 				<li class="center">卫生云信息平台</li>
 			</ul>
 			
-<!--			<text id="showInfo"><%out.print(code);%></text> -->
-			<div id="showInfo"><%out.print(code);%></div>
+<!-- 			<text ><%--session.getAttribute("failNo");--%></text> 
+			<text id="failNo" name="hehe1">${failNo}</text> -->
+			<div id="showInfo">${error}</div>
 			<ul>
 				<li class="left">账&nbsp;号：<input id="username" type="text" name="username" value="${username}" class="noUsername" notNull="账号"/></li>
 			</ul>
@@ -77,7 +109,7 @@
 			</ul>
 			<ul>
 <!-- 				<li class="left">验证码：<input type="text" name="code" /><img id="imgObj" onclick="javascript:changeImg()" src="code.html" /></li> -->
-				<li class="left">验证码：<input id="verify" type="text" name="code" /> <img id="imgObj" onclick="javascript:changeImg()" src="code.html" /><a href="javascript:changeImg()">换一张 </a></li>
+				<li class="left" id="yanzheng" style="display: none;">验证码：<input id="verify" type="text" name="code" /> <img id="imgObj" onclick="javascript:changeImg()" src="code.html" /><a href="javascript:changeImg()">换一张 </a></li>
  				<%-- String code1 = session.getAttribute("code").toString(); --%>
 				<%-- out.print(code1); --%> 
 			</ul>

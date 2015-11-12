@@ -14,7 +14,7 @@ function verify() {
 }
 
 function myVerify () {
-	alert("myveryf");
+//	alert("myveryf");
 // 	alert($(".noUsername").attr("notNull"));
 // 	alert($(".noUsername").val());
 	if($(".noUsername").val() == "") {
@@ -59,9 +59,9 @@ function myVerify () {
 //		}
 
 	
-	alert("before send");
-	var url = "send";
-	$.get(url, null, callback);
+//	alert("before send");
+//	var url = "send";
+//	$.get(url, null, callback);
 }
 
 function callback(data) {

@@ -21,7 +21,12 @@
  
      <!-- 获取一条数据 -->
     <select id="getFromNamePwd" parameterType="com.dounine.springmvc.entity.User" resultType="com.dounine.springmvc.entity.User">
-        select id,username,password from User where username=#{username} and password=#{password}
+        select * from User where username=#{username} and password=#{password}
     </select>
-       
+
+     <!-- 获取一条数据 -->
+    <select id="getRole" parameterType="com.dounine.springmvc.entity.User" resultType="com.dounine.springmvc.entity.User">
+        select role from User where username=#{username} and password=#{password}
+    </select>
+           
 </mapper>

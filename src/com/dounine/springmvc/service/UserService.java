@@ -28,4 +28,8 @@ public class UserService {
 	public User getFromNamePwd(User user){
 		return userMapper.getFromNamePwd(user);
 	}
+
+	public User getRole(User user){
+		return userMapper.getRole(user);
+	}
 }
